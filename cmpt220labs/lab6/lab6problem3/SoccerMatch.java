@@ -86,7 +86,7 @@ public class SoccerMatch {
 		Date d1 = new Date(2018, 11, 12, 10, 12, 30);
 		@SuppressWarnings("deprecation")
 		Date d2 = new Date(2018, 11, 12, 12, 40, 30);
-		SoccerMatch sm = new SoccerMatch(d1, d2, "Barabati", "Dragen", "Panthor");
+		SoccerMatch sm = new SoccerMatch(d1, d2, "Barry”, "Drake”, "Parker”);
 
 		String homePlayerName[] = {"Alex", "Rondell", "Sunny", "Akhil", "Lee", "Gary", "Kwaku", "Tyus", "Bynum", "Andrew", "Mac"};
 		String visitPlayerName[] = {"Rohan", "Noel", "Max", "Jonathan", "Rohan", "Sam", "Bryan", "Arjun", "Smith", "Bruce", "Tony"};
@@ -105,7 +105,7 @@ public class SoccerMatch {
 	for(int i = 0; i < 11; i++)
 
 	System.out.println(sm.homePlayers[i]);
-	System.out.print("\n\n*************************** Visiting Team Players *************************** ");
+	System.out.print(“\n\n—------—------—------—------ Visiting Team Players —------—------—------—------");
 
 	for(int i = 0; i < 11; i++)
 
@@ -117,7 +117,7 @@ public class SoccerMatch {
 
 	System.out.println(sm.homeGoals[i]);
 
-	System.out.print("\n\n*************************** Visiting Team Goals *************************** ");
+	System.out.print("\n\n—------—------—------—------ Visiting Team Goals —------—------—------—------ ");
 
 	for(int i = 0; i < 10; i++)
 
