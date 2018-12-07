@@ -11,11 +11,11 @@ public class BenkeiLunchRest extends JFrame
 
 private Container contents;
 
-private JLabel name, courseNum, welcome, prompt, tuna, salmon, yellowtail, caliRolls, spicyRolls, sodas, beers, waters;
+private JLabel name, courseNum, welcome, prompt, tempUdon, tuna, salmon, yellowtail, caliRolls, spicyRolls, sodas, beers, waters;
 
 private JLabel chargeDrinks, chargeSubtotal, chargeService, totalBill;
 
-private JTextField numTuna, numSalmon, numYellowtail, numCaliRolls, numSpicyRolls, numSodas, numBeers, numWaters;
+private JTextField numTempUdon, numTuna, numSalmon, numYellowtail, numCaliRolls, numSpicyRolls, numSodas, numBeers, numWaters;
 
 private JButton compute;
 
@@ -32,6 +32,10 @@ name = new JLabel("Programmer: Eric Cho | ");
 courseNum = new JLabel("CMPT 220 | ");
 welcome = new JLabel("Welcome To Benkei Sushi |");
 prompt = new JLabel("Enter number of orders for each product; 0 if none");
+
+tempUdon = new JLabel("Tempura Udon: $11.00");
+tempUdon.setForeground(Color.BLUE);
+numTempUdon = new JTextField(2);
 
 tuna = new JLabel("Tuna: $3.00");
 tuna.setForeground(Color.BLUE);
@@ -67,12 +71,12 @@ numWaters = new JTextField(2);
 
 chargeDrinks = new JLabel("Drinks = $");
 chargeSubtotal = new JLabel("Subtotal = $");
-chargeService = new JLabel("Service and Taxes(16%) = $");
+chargeService = new JLabel("Service and Taxes (16%) = $");
 totalBill= new JLabel("Total Bill = $");
 
 chargeDrinks = new JLabel("Drinks: ?");
 chargeSubtotal = new JLabel("Subtotal: ?");
-chargeService = new JLabel("Service and Taxes(16%): ?");
+chargeService = new JLabel("Service and Taxes (16%): ?");
 totalBill = new JLabel("Total Bill: ?");
 
 compute = new JButton("Calculate Bill");
@@ -81,6 +85,8 @@ contents.add(name);
 contents.add(courseNum);
 contents.add(welcome);
 contents.add(prompt);
+contents.add(tempUdon);
+contents.add(numTempUdon);
 contents.add(tuna);
 contents.add(numTuna);
 contents.add(salmon);
@@ -130,6 +136,7 @@ double two = Double.parseDouble(numSalmon.getText());
 double three = Double.parseDouble(numYellowtail.getText());
 double four = Double.parseDouble(numCaliRolls.getText());
 double five = Double.parseDouble(numSpicyRolls.getText());
+double six = Double.parseDouble(numTempUdon.getText());
 double d1 = Double.parseDouble(numSodas.getText());
 double d2 = Double.parseDouble(numBeers.getText());
 double d3 = Double.parseDouble(numWaters.getText());
@@ -137,7 +144,7 @@ double d3 = Double.parseDouble(numWaters.getText());
 // Calculations for determining total price of bill
 
 double drinks = (d1 * 2.50) + (d2 * 3.00) + (d3 * 2.00);
-double orderAmount = ((one * 3.00) + (two * 2.50) + (three * 3.50) + (four * 6.50) + (five * 8.00) + drinks);
+double orderAmount = ((one * 3.00) + (two * 2.50) + (three * 3.50) + (four * 6.50) + (five * 8.00) + (six * 11.00) + drinks);
 double serviceAmount = (orderAmount) * .16;
 double totalAmount = (orderAmount + serviceAmount);
 
